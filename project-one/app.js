@@ -7,7 +7,8 @@
 //As a User I want to play a web based trivia game
 
 //Requirements
-//
+//Variables
+const 
 
 
 
@@ -45,21 +46,21 @@ const rayyaQuestions = [{
 ]
 
 //Functions
-const createQuestions = () => {
-    let createdQuestions = [];
+// const createQuestions = () => {
+//     let createdQuestions = [];
 
-    rayyaQuestions.forEach((currentQuestion, questionNumber) => {
-            let answersArray = [];
+//     rayyaQuestions.forEach((currentQuestion, questionNumber) => {
+//             let answersArray = [];
 
-            for(let answer in currentQuestion.answersArray){
-                answersArray.push(
-                    <label>
-                        <input type = "radio" name="question${questionNumber}"  value="${letter}">
-                        ${answer} :
-                        ${currentQuestion.answersArray[answer]}
-                    </label>
-                );
+//             for(let answer in currentQuestion.answersArray){
+//                 answersArray.push(
+//                     `<label>
+//                         <input type ="radio" name="question${questionNumber}"  value="${letter}">
+//                         ${answer} :
+//                         ${currentQuestion.answersArray[answer]}
+//                     </label>`
+//                 );
 
-            }
-    }
-}
+//             }
+//     }
+// }
