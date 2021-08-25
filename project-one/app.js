@@ -19,17 +19,19 @@ const rayyaQuestions = [{
         b: "Freisen Conferderacy",
         c: "Kingdom of Borsneia",
         d: "Elven Homeland",
-    }
+    },
+    correctAnswer: "b",
 },
 {
     question: "What was Rayya's pet's name?",
     answers: {
         a: "Creme",
         b: "Cream",
-        c: 'Demon Dog',
-        d: 'Creme',
-    }
-}
+        c: "Demon Dog",
+        d: "Creme",
+    },
+    correctAnswer = "b",
+},
 {
     question: "What was Rayya's original class?",
     answers: {
@@ -37,6 +39,27 @@ const rayyaQuestions = [{
         b: "Hexblade Warlock",
         c: "Gold Draconic Sorcerer",
         d: "Swashbuckler Warlock",
+    },
+    correctAnswer = "c",
+},
+]
+
+//Functions
+const createQuestions = () => {
+    let createdQuestions = [];
+
+    rayyaQuestions.forEach((currentQuestion, questionNumber) => {
+            let answersArray = [];
+
+            for(let answer in currentQuestion.answersArray){
+                answersArray.push(
+                    <label>
+                        <input type = "radio" name="question${questionNumber}"  value="${letter}">
+                        ${answer} :
+                        ${currentQuestion.answersArray[answer]}
+                    </label>
+                );
+
+            }
     }
 }
-]
