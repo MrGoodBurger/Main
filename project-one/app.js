@@ -147,20 +147,30 @@ startGame = () => {
     const questionIndex = Math.floor(Math.random() * availalbeQuestions.length);
     currentQuestion = availalbeQuestions[questionIndex]; 
     question.innerHTML = currentQuestion.question;
+   
+   //Remove Current Question From Pool
+    console.log(availalbeQuestions)
+    availalbeQuestions.splice(questionIndex, 1);
+    console.log(availalbeQuestions)
+
+
  };
-//  choice.forEach( choice => {
-//      const number = choice.dataset['number'];
-//      //console.log(number)
-//      console.log(currentQuestion);
-//      //Remember to change to DOM when refactoring and scaling the project.
-//      choice.innerHTML = currentQuestion['choice'+ number];
-//  });
+ const eventHandler = (e) =>{
+    console.log(e.target);
+}
 
 
  startGame();
- console.log(currentQuestion);
  let answerOne = document.getElementById('answerOne');
  answerOne.innerHTML = currentQuestion.choice1;
+ answerOne.addEventListener("click", eventHandler)
+ let answerTwo = document.getElementById('answerTwo');
  answerTwo.innerHTML = currentQuestion.choice2;
+ answerTwo.addEventListener('click', eventHandler)
+ let answerThree = document.getElementById('answerThree');
  answerThree.innerHTML = currentQuestion.choice3;
+ answerThree.addEventListener('click', eventHandler)
+ let answerFour = document.getElementById('answerFour');
  answerFour.innerHTML = currentQuestion.choice4;
+ answerFour.addEventListener('click', eventHandler);
+
