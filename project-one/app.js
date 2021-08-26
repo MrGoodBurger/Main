@@ -144,6 +144,10 @@ const startGame = () => {
 }
 
  const getNewQuestion = () => {
+     if(availalbeQuestions.length === 0) {
+         alert('The Game is Over!!!')
+         acceptingAnswers = false;
+     };
      questionCounter++;
     const questionIndex = Math.floor(Math.random() * availalbeQuestions.length);
     currentQuestion = availalbeQuestions[questionIndex]; 
@@ -153,7 +157,8 @@ const startGame = () => {
     console.log(availalbeQuestions)
     availalbeQuestions.splice(questionIndex, 1);
     console.log(availalbeQuestions);
-
+    
+    //Display questions to page
     let answerOne = document.getElementById('answerOne');
     answerOne.innerHTML = currentQuestion.choice1;
     answerOne.addEventListener("click", eventHandler)
@@ -168,9 +173,13 @@ const startGame = () => {
     answerFour.addEventListener('click', eventHandler);
 
 
+
+
  };
  const eventHandler = (e) =>{
-    console.log(e.target);
+    const userChoice = e.target;
+    const userAnswer = userChoice.dataset['number']
+    console.log(userAnswer)
     getNewQuestion();
 }
 
