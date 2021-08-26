@@ -139,14 +139,23 @@ const startGame = () => {
     score = 0;
     //Use the spread operater to separate this arrays elements into new arrays
     availalbeQuestions = [...rayyaQuestions];
-    console.log(availalbeQuestions)
+    // console.log(availalbeQuestions)
     getNewQuestion();
+}
+const checkWin = () => { 
+    if(score >= 70){
+        alert("You won! You passed with an " + score + "% score!")
+    }
+    else{
+        alert("Unfortunately you lost! You had a score of " + score + "%.")
+    }
 }
 
  const getNewQuestion = () => {
      if(availalbeQuestions.length === 0) {
          alert('The Game is Over!!!')
          acceptingAnswers = false;
+         checkWin();
      };
      questionCounter++;
     const questionIndex = Math.floor(Math.random() * availalbeQuestions.length);
@@ -154,9 +163,9 @@ const startGame = () => {
     question.innerHTML = currentQuestion.question;
    
    //Remove Current Question From Pool
-    console.log(availalbeQuestions)
+    // console.log(availalbeQuestions)
     availalbeQuestions.splice(questionIndex, 1);
-    console.log(availalbeQuestions);
+    // console.log(availalbeQuestions);
     
     //Display questions to page
     let answerOne = document.getElementById('answerOne');
@@ -172,18 +181,20 @@ const startGame = () => {
     answerFour.innerHTML = currentQuestion.choice4;
     answerFour.addEventListener('click', eventHandler);
 
-
+     
 
 
  };
- const eventHandler = (e) =>{
+ const eventHandler = (e) => {
     const userChoice = e.target;
     const userAnswer = userChoice.dataset['number']
-    console.log(userAnswer)
+    console.log(userAnswer == currentQuestion.answer)
+    if(userAnswer == currentQuestion.answer) {
+        score+=10;
+    }
     getNewQuestion();
 }
-
-
- startGame();
+startGame();
 }
+
 main();
