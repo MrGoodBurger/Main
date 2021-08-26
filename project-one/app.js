@@ -23,6 +23,10 @@
 //There are more than one set of questions, preferablly one per character.
 //Characters have their own containers(cards or collapsable divs??)
 
+//Things I learned
+//What Javascript REM is, and how it functions in comparison to px and/or %
+//
+
 //Variable
 
 //Functions
