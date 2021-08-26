@@ -30,6 +30,8 @@
 //Variables
 const question = document.getElementById('question');
 const choice = Array.from(document.getElementsByClassName('choice-text'));
+console.log(choice)
+;
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -37,7 +39,8 @@ let score = 0 ;
 let questionCounter = 0;
 
 //Create array to store questions
-let avaialbeQuestions = []
+let availalbeQuestions = [];
+
 
 //Rayya
 const rayyaQuestions = [
@@ -134,10 +137,30 @@ startGame = () => {
     questionCounter = 0;
     score = 0;
     //Use the spread operater to separate this arrays elements into new arrays
-    avaialbeQuestions = [...rayyaQuestions];
+    availalbeQuestions = [...rayyaQuestions];
+    console.log(availalbeQuestions)
     getNewQuestion();
 }
 
  const getNewQuestion = () => {
      questionCounter++;
- }
+    const questionIndex = Math.floor(Math.random() * availalbeQuestions.length);
+    currentQuestion = availalbeQuestions[questionIndex]; 
+    question.innerHTML = currentQuestion.question;
+ };
+//  choice.forEach( choice => {
+//      const number = choice.dataset['number'];
+//      //console.log(number)
+//      console.log(currentQuestion);
+//      //Remember to change to DOM when refactoring and scaling the project.
+//      choice.innerHTML = currentQuestion['choice'+ number];
+//  });
+
+
+ startGame();
+ console.log(currentQuestion);
+ let answerOne = document.getElementById('answerOne');
+ answerOne.innerHTML = currentQuestion.choice1;
+ answerTwo.innerHTML = currentQuestion.choice2;
+ answerThree.innerHTML = currentQuestion.choice3;
+ answerFour.innerHTML = currentQuestion.choice4;
