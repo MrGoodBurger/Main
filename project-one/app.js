@@ -27,16 +27,20 @@
 //What Javascript REM is, and how it functions in comparison to px and/or %
 //
 
-//Variable
+//Variables
 const question = document.getElementById('question');
 const choice = Array.from(document.getElementsByClassName('choice-text'));
 
 let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0 ;
+let questionCounter = 0;
+
+//Create array to store questions
+let avaialbeQuestions = []
 
 //Rayya
-let rayyaQuestions = [
+const rayyaQuestions = [
     {
         question: "What nation does Rayya originate from?",
         choice1: 'Geldenreich',
@@ -125,3 +129,15 @@ let rayyaQuestions = [
     }
 ];
 
+//Functions
+startGame = () => {
+    questionCounter = 0;
+    score = 0;
+    //Use the spread operater to separate this arrays elements into new arrays
+    avaialbeQuestions = [...rayyaQuestions];
+    getNewQuestion();
+}
+
+ const getNewQuestion = () => {
+     questionCounter++;
+ }
