@@ -28,6 +28,7 @@
 //
 
 //Variables
+const main = () => {
 const question = document.getElementById('question');
 const choice = Array.from(document.getElementsByClassName('choice-text'));
 console.log(choice)
@@ -133,7 +134,7 @@ const rayyaQuestions = [
 ];
 
 //Functions
-startGame = () => {
+const startGame = () => {
     questionCounter = 0;
     score = 0;
     //Use the spread operater to separate this arrays elements into new arrays
@@ -151,26 +152,29 @@ startGame = () => {
    //Remove Current Question From Pool
     console.log(availalbeQuestions)
     availalbeQuestions.splice(questionIndex, 1);
-    console.log(availalbeQuestions)
+    console.log(availalbeQuestions);
+
+    let answerOne = document.getElementById('answerOne');
+    answerOne.innerHTML = currentQuestion.choice1;
+    answerOne.addEventListener("click", eventHandler)
+    let answerTwo = document.getElementById('answerTwo');
+    answerTwo.innerHTML = currentQuestion.choice2;
+    answerTwo.addEventListener('click', eventHandler)
+    let answerThree = document.getElementById('answerThree');
+    answerThree.innerHTML = currentQuestion.choice3;
+    answerThree.addEventListener('click', eventHandler)
+    let answerFour = document.getElementById('answerFour');
+    answerFour.innerHTML = currentQuestion.choice4;
+    answerFour.addEventListener('click', eventHandler);
 
 
  };
  const eventHandler = (e) =>{
     console.log(e.target);
+    getNewQuestion();
 }
 
 
  startGame();
- let answerOne = document.getElementById('answerOne');
- answerOne.innerHTML = currentQuestion.choice1;
- answerOne.addEventListener("click", eventHandler)
- let answerTwo = document.getElementById('answerTwo');
- answerTwo.innerHTML = currentQuestion.choice2;
- answerTwo.addEventListener('click', eventHandler)
- let answerThree = document.getElementById('answerThree');
- answerThree.innerHTML = currentQuestion.choice3;
- answerThree.addEventListener('click', eventHandler)
- let answerFour = document.getElementById('answerFour');
- answerFour.innerHTML = currentQuestion.choice4;
- answerFour.addEventListener('click', eventHandler);
-
+}
+main();
