@@ -25,7 +25,8 @@ h2 {
     font-size: 2.4rem;
     margin-bottom: 4rem;
     font-weight: 700;
-    border: 2mm ridge rgb(255, 255, 255)
+    border: 2mm ridge rgb(255, 255, 255);
+    
 }
 
 h3 {
@@ -40,7 +41,7 @@ h3 {
     width: 100%;
     font-size: 1.8rem;
     border: 1.5rem rgba(24, 2, 21);;
-    background-color: rgba(255,255,255);
+    background-color: rgb(218, 200, 223);
   }
 .choice-container:hover {
     cursor: pointer;
