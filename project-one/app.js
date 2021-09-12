@@ -30,7 +30,7 @@
 //Variables
 const main = () => {
 const question = document.getElementById('question');
-const choice = Array.from(document.getElementsByClassName('choice-text'));
+choice = Array.from(document.getElementsByClassName('choice-text'));
 console.log(choice)
 ;
 
@@ -150,7 +150,7 @@ const checkWin = () => {
         alert("Unfortunately you lost! You had a score of " + score + "%.")
     }
 }
-
+//Get New Question
  const getNewQuestion = () => {
      if(availalbeQuestions.length === 0) {
          alert('The Game is Over!!!')
@@ -185,6 +185,7 @@ const checkWin = () => {
 
 
  };
+ //Event Handler Function
  const eventHandler = (e) => {
     const userChoice = e.target;
     const userAnswer = userChoice.dataset['number']
