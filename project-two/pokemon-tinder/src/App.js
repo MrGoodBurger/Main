@@ -1,14 +1,14 @@
-
+import React, { useEffect, useState } from "react";
+import Image from "./components/Image";
 
 function App() {
-  return (
+  return ( 
     <div>
-      <div>
-        <img src = ""/>
-        
-      </div>
+      <Image
+      />
+
     </div>
-  );
+   );
 }
 
 export default App;

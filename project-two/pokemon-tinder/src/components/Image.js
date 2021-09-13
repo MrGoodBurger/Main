@@ -1,9 +1,12 @@
-//This Componentg handles the div of the image
+//This Component deals with the image of the div
+import Red from '../images/Red.png'
 
-function Image( { props } ) {
+function Image() {
     return(
         <div>
-            <img src=""/>
+            <img src= {Red}/>
         </div>
     )
-}
+};
+
+export default Image;

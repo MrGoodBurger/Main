@@ -1,7 +1,11 @@
-//This Component handles the PokeMon API 
+//This Component handles the PokeMon API data
 
-function PokeMon {
-    return (
-        
+function PokeMon() {
+    return(
+        <div>
+
+        </div>
     )
-}
+};
+
+export default PokeMon;
