@@ -1,0 +1,13 @@
+* {
+    display: grid
+}
+
+
+.container {
+    border: 3px solid black;
+    margin: 10px;
+}
+
+.train-list-item {
+    padding: 100px;
+}
