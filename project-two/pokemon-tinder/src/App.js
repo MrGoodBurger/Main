@@ -5,8 +5,8 @@ import Bio from "./components/Bio";
 import Image from "./components/Image";
 import PokeMon from "./components/PokeMon";
 import './App.css';
-import FooterText from "./components/Footer";
-import HeaderText from "./components/Header";
+import FooterText from "./components/FooterText";
+import HeaderText from "./components/HeaderText";
 import styled from "styled-components";
 
 
@@ -58,6 +58,25 @@ const Header = styled.header`
   text-align: left;
   `;
 
+const Footer = styled.footer`
+  grid-area: footer;
+  background-color: #ff3333;
+  padding: 10px;
+  text-align: center;
+  `;
+
+const Card = styled.div`
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition:0.3s;
+  border: 3px solid black;
+  `;
+
+  const CardContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    `;
+
 function App() {
   const fetchData = () => {
     pokemonTeam.map(poke => {
@@ -81,14 +100,17 @@ function App() {
   }, []);
 
   const [pokemon, setPokemon] = useState([ ])
-  return ( 
+  return (
+    //Use inline Styling here
     <div id='grid-container'>
       <Header>
         <HeaderText
         />
       </Header>
-      <Image
-      />
+      <Card>
+        <Image
+        />
+      </Card>
       <Bio
       />
       <Badges
@@ -99,10 +121,10 @@ function App() {
       pokemon={poke}/>
         )
       })}
-      <div id="footer">
+      <Footer>
         <FooterText
         />
-      </div>
+      </Footer>
     </div>
    );
 }

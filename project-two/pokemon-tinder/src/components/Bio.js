@@ -1,4 +1,5 @@
 //This Component controls the Div the rends the Bio
+//Eventually combine with Image component
 
 function Bio() {
     return(
