@@ -1,10 +1,11 @@
-//This Component handles the PokeMon API data
+//This Component handles the PokeMon Divs
 
-function PokeMon() {
+function PokeMon({ pokemon }) {
     return(
         <div>
-
-        </div>
+            <button>{pokemon.name}</button>
+            <p></p>
+        </div>    
     )
 };
 
