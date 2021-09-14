@@ -3,8 +3,12 @@
 function PokeMon({ pokemon }) {
     return(
         <div>
+            {console.log(pokemon)}
             <button>{pokemon.name}</button>
-            <p></p>
+            <p>{pokemon.types[0].type.name}</p>
+            <p>{pokemon.height}</p>
+            <p>{pokemon.weight}</p>
+
         </div>    
     )
 };
