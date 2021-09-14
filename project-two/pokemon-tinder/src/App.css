@@ -8,28 +8,3 @@ body {
 }
 
 /*Class Styling */
-
-.header {
-  grid-area: header;
-  background-color: #ff3333;
-  padding: 30px;
-  text-align: left;
-
-}
-
-.grid-container {
-  display: grid;
-  grid-template-areas: 
-      'header header header header header header'
-      'left middle middle middle middle right'
-      'footer footer footer footer footer footer';
-
-
-}
-
-.footer {
-  grid-area: footer;
-  background-color: #ff3333;
-  padding: 10px;
-  text-align: center;
-}

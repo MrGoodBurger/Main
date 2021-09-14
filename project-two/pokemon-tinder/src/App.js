@@ -8,6 +8,7 @@ import './App.css';
 import FooterText from "./components/FooterText";
 import HeaderText from "./components/HeaderText";
 import styled from "styled-components";
+import Image2 from "./components/Image2";
 
 
 
@@ -71,12 +72,32 @@ const Card = styled.div`
   border: 3px solid black;
   `;
 
-  const CardContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content:space-around;
-    `;
+const CardContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  padding: 50px;
+  `;
 
+const BadgeContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+  `;
+
+const BioContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  background-color: #ff9999;
+  `;
+
+const PokemonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #b4fdfd;
+  `;
 function App() {
   const fetchData = () => {
     pokemonTeam.map(poke => {
@@ -105,25 +126,37 @@ function App() {
     <div id='grid-container'>
       <Header>
         <HeaderText
-        />
+          />
       </Header>
-      <Card>
-        <Image
+      <CardContainer>
+        <Card>
+          <Image
+            />
+        </Card>
+        <Card>
+          <Image2
+            />
+        </Card>
+      </CardContainer>
+      <BioContainer>
+          <Bio
         />
-      </Card>
-      <Bio
-      />
-      <Badges
-      badges={badges}/>
-      {pokemon.map(poke => {
-        return(
+      </BioContainer>
+      <BadgeContainer>
+        <Badges
+        badges={badges}/>
+      </BadgeContainer>
+      <PokemonContainer>
+        {pokemon.map(poke => {
+          return(
           <PokeMon
-      pokemon={poke}/>
-        )
-      })}
+        pokemon={poke}/>
+          )
+        })}
+      </PokemonContainer>
       <Footer>
         <FooterText
-        />
+          />
       </Footer>
     </div>
    );
