@@ -3,7 +3,7 @@
 function PokeMon({ pokemon }) {
     return(
         <div>
-            <button onClick>{pokemon.name}</button>
+            <button>{pokemon.name}</button>
             <p></p>
         </div>    
     )

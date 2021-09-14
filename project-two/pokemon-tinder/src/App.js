@@ -2,11 +2,12 @@
 import React, { useEffect, useState } from "react";
 import Badges from "./components/Badges";
 import Bio from "./components/Bio";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 import Image from "./components/Image";
 import PokeMon from "./components/PokeMon";
-
+import './App.css';
+import FooterText from "./components/Footer";
+import HeaderText from "./components/Header";
+import styled from "styled-components";
 
 
 
@@ -49,6 +50,13 @@ const badges =[
   
 ];
 
+//Styled Components
+const Header = styled.header`
+  grid-area: header;
+  background-color: #ff3333;
+  padding: 30px;
+  text-align: left;
+  `;
 
 function App() {
   const fetchData = () => {
@@ -74,9 +82,11 @@ function App() {
 
   const [pokemon, setPokemon] = useState([ ])
   return ( 
-    <div>
-      <Header
-      />
+    <div id='grid-container'>
+      <Header>
+        <HeaderText
+        />
+      </Header>
       <Image
       />
       <Bio
@@ -89,8 +99,10 @@ function App() {
       pokemon={poke}/>
         )
       })}
-      <Footer
-      />
+      <div id="footer">
+        <FooterText
+        />
+      </div>
     </div>
    );
 }
