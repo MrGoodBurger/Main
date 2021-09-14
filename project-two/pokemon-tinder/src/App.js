@@ -97,6 +97,8 @@ const PokemonContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: #b4fdfd;
+  border: 2px solid black;
+  margin: 16px 20px 20px 100px;
   `;
 function App() {
   const fetchData = () => {
@@ -146,14 +148,16 @@ function App() {
         <Badges
         badges={badges}/>
       </BadgeContainer>
-      <PokemonContainer>
+      
         {pokemon.map(poke => {
           return(
-          <PokeMon
-        pokemon={poke}/>
-          )
-        })}
-      </PokemonContainer>
+            <PokemonContainer>
+              <PokeMon
+                pokemon={poke}/>
+            </PokemonContainer>
+            )
+          })}
+      
       <Footer>
         <FooterText
           />
