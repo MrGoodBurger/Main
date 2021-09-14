@@ -9,6 +9,8 @@ import FooterText from "./components/FooterText";
 import HeaderText from "./components/HeaderText";
 import styled from "styled-components";
 import Image2 from "./components/Image2";
+import boulder from "./images/Boulderbadge.png";
+import cascade from "./images/Cascadebadge.png";
 
 
 
@@ -18,6 +20,7 @@ const pokemonTeam = ["charizard", "kangaskhan", "snorlax", "dragonite", "hitmonc
 const badges =[
   { 
     name: "Boulder Badge",
+    pic: {boulder},
     earned: true,
   },
   { 

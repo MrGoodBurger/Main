@@ -2,11 +2,12 @@
 
 
 function Badges({ badges }) {
+    console.log(badges[0].pic.boulder);
     return(
 //I want this component to display as an row with each badge having its own
         <section>
             <div>
-                <img src="" alt=""/>
+                <img src={badges[0].pic.boulder} alt="rock"/>
                 <p>{badges[0].name}</p>
             </div>
             <div>
