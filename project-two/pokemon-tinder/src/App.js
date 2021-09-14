@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import Badges from "./components/Badges";
 import Bio from "./components/Bio";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import Image from "./components/Image";
 import PokeMon from "./components/PokeMon";
 
@@ -73,6 +75,8 @@ function App() {
   const [pokemon, setPokemon] = useState([ ])
   return ( 
     <div>
+      <Header
+      />
       <Image
       />
       <Bio
@@ -85,8 +89,8 @@ function App() {
       pokemon={poke}/>
         )
       })}
-          
-
+      <Footer
+      />
     </div>
    );
 }
