@@ -11,6 +11,12 @@ import styled from "styled-components";
 import Image2 from "./components/Image2";
 import boulder from "./images/Boulderbadge.png";
 import cascade from "./images/Cascadebadge.png";
+import thunder from "./images/Thunderbadge.png";
+import rainbow from "./images/Rainbow_Badge.png";
+import soul from "./images/Soulbadge.png";
+import marsh from "./images/Marshbadge.png";
+import volcano from "./images/Volcanobadge.png";
+import earth from "./images/Earthbadge.png";
 
 
 
@@ -25,30 +31,37 @@ const badges =[
   },
   { 
     name: "Cascade Badge",
+    pic: {cascade},
     earned: true,
   },
   { 
     name: "Thunder Badge",
+    pic: {thunder},
     earned: true,
   },
   {
      name: "Rainbow Badge",
+     pic: {rainbow},
     earned: true,
   },
   { 
     name: "Soul Badge",
+    pic: {soul},
     earned: false,
   },
   { 
     name: "Marsh Badge",
+    pic: {marsh},
     earned: true,
   },
   { 
     name: "Volcano Badge",
+    pic: {volcano},
     earned: true,
   },
   { 
     name: "Earth Badge",
+    pic: {earth},
     earned: true,
   },
   
@@ -87,6 +100,11 @@ const BadgeContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   padding: 10px;
+  `;
+
+  const InnerBadgeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   `;
 
 const BioContainer = styled.div`
@@ -149,8 +167,14 @@ function App() {
         />
       </BioContainer>
       <BadgeContainer>
-        <Badges
-        badges={badges}/>
+        <InnerBadgeContainer>
+           {badges.map(badge => {
+             return(
+               <Badges
+               badge={badge}/>
+             )
+           })}
+        </InnerBadgeContainer>
       </BadgeContainer>
       
         {pokemon.map(poke => {

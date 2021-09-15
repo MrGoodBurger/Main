@@ -18,7 +18,6 @@ function PokeMon({ pokemon }) {
     }
     return(
         <div>
-            {console.log(pokemon)}
             <button onClick={changeButtonState}>{pokemon.name}</button>
             {showPoke ? pokeDiv : " "}
         </div>    
