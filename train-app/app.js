@@ -7,7 +7,7 @@ for(let i=0; i < 5; i++){
     trainListItem.appendChild(trainListItemButton);
     trainListItem.id = "train-list-item"+i;
     trainListItem.className = "train-list-item"
-    let trainListItemText = document.createTextNode("Sample Text");
+    let trainListItemText = document.createTextNode("Testing");
     trainListItem.appendChild(trainListItemText);
     trainList.appendChild(trainListItem);
 }
